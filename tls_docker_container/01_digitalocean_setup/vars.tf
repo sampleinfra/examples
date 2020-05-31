@@ -1,12 +1,24 @@
 variable "do_region" {
-  default = "sfo2"
+  type        = string
+  description = "DigitalOcean region for droplet. See region options at https://developers.digitalocean.com/documentation/v2/#list-all-regions"
+  default     = "sfo2"
 }
 
 variable "domain" {
-  default = "sampleinfra.com"
+  type        = string
+  description = "Domain to use when creating DNS records and TLS certifcates"
+  default     = "sampleinfra.com"
 }
 variable "subdomain" {
-  default = "echo"
+  type        = string
+  description = "Subdomain to use when creating DNS records and TLS certifcates"
+  default     = "echo"
 }
-variable "email" {}
-variable "do_token" {}
+variable "email" {
+  type        = string
+  description = "Email to use when creating TLS certificates"
+}
+variable "do_token" {
+  type        = string
+  description = "DigitalOcean API Token"
+}
