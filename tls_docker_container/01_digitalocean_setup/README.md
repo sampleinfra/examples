@@ -1,5 +1,7 @@
-1. Run terraform `terraform apply`  
-1. Add the generate ssh key to your keychain `ssh-add key.pem`  
+Creates all the DigitalOcean assets you need to run this example
+
+1. Run terraform `TF_VAR_domain=sampleinfra.com TF_VAR_subdomain=echo terraform apply`  
+1. Add the generated ssh key to your keychain `ssh-add key.pem`  
 1. Add host to your known\_hosts files `ssh root@\`terraform output docker01\_ip\
 
 ## Requirements
