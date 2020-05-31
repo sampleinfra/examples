@@ -7,15 +7,15 @@ will fail.
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12 |
 | docker | = 2.7 |
+| terraform | >= 0.12 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | docker | = 2.7 |
-| terraform | n/a |
+| terraform | >= 0.12 |
 
 ## Inputs
 
