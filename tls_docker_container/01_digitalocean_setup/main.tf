@@ -13,10 +13,6 @@ data "http" "icanhazip" {
   url = "http://icanhazip.com"
 }
 
-resource "digitalocean_domain" "prod" {
-  name = var.domain
-}
-
 resource "tls_private_key" "prod" {
   algorithm = "RSA"
   rsa_bits  = "4096"
@@ -85,4 +81,15 @@ resource "digitalocean_droplet" "docker01" {
 #!/bin/bash
 useradd -M echo
 EOF
+}
+
+resource "digitalocean_domain" "prod" {
+  name = var.domain
+}
+
+resource "digitalocean_record" "echo" {
+  domain = digitalocean_domain.prod.name
+  type   = "A"
+  name   = "echo"
+  value  = digitalocean_droplet.docker01.ipv4_address
 }
