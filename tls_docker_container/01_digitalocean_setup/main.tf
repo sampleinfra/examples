@@ -121,3 +121,11 @@ resource "acme_certificate" "certificate" {
     }
   }
 }
+
+resource "digitalocean_project" "prod" {
+  name        = "Example TLS Docker Container (TF Managed)"
+  description = "Example TLS Docker Container (TF Managed)"
+  purpose     = "Example TLS Docker Container (TF Managed)"
+  environment = "Development"
+  resources   = [digitalocean_domain.prod.urn, digitalocean_droplet.docker01.urn]
+}
