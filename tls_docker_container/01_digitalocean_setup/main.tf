@@ -97,7 +97,7 @@ resource "digitalocean_domain" "prod" {
 resource "digitalocean_record" "echo" {
   domain = digitalocean_domain.prod.name
   type   = "A"
-  name   = "echo"
+  name   = var.subdomain
   value  = digitalocean_droplet.docker01.ipv4_address
 }
 
@@ -112,7 +112,7 @@ resource "acme_registration" "reg" {
 
 resource "acme_certificate" "certificate" {
   account_key_pem = acme_registration.reg.account_key_pem
-  common_name     = "echo.sampleinfra.com"
+  common_name     = "${digitalocean_record.echo.name}.${digitalocean_domain.prod.name}"
 
   dns_challenge {
     provider = "digitalocean"

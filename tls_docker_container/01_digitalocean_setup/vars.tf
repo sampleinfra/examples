@@ -5,6 +5,8 @@ variable "do_region" {
 variable "domain" {
   default = "sampleinfra.com"
 }
-
+variable "subdomain" {
+  default = "echo"
+}
 variable "email" {}
 variable "do_token" {}
