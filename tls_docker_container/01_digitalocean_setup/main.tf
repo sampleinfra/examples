@@ -13,6 +13,10 @@ data "http" "icanhazip" {
   url = "http://icanhazip.com"
 }
 
+resource "digitalocean_domain" "prod" {
+  name = var.domain
+}
+
 resource "tls_private_key" "prod" {
   algorithm = "RSA"
   rsa_bits  = "4096"
