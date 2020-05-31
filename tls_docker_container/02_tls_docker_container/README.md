@@ -7,6 +7,7 @@ will fail.
 
 | Name | Version |
 |------|---------|
+| terraform | >= 0.12 |
 | docker | = 2.7 |
 
 ## Providers
