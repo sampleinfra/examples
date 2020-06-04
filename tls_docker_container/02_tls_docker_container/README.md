@@ -8,14 +8,13 @@ will fail.
 | Name | Version |
 |------|---------|
 | docker | = 2.7 |
-| terraform | >= 0.12 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | docker | = 2.7 |
-| terraform | >= 0.12 |
+| terraform | n/a |
 
 ## Inputs
 
